@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C6v-TD-2a1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BearsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mpr-ad-O5N">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="mWq-zQ-0oP"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="MnF-5n-uzl" kind="show" identifier="bearsSegue" id="GkO-Lb-qXK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071.2" y="133.5832083958021"/>
+        </scene>
+        <!--Bear Table View Controller-->
+        <scene sceneID="Qen-4m-iYF">
+            <objects>
+                <tableViewController id="MnF-5n-uzl" customClass="BearTableViewController" customModule="BearsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9U4-I5-UOo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="krq-bI-JZW" customClass="BearTableViewCell" customModule="BearsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="krq-bI-JZW" id="zuz-z6-ULH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <segue destination="1b1-EV-sNb" kind="show" identifier="bearDetailSegue" id="18r-Ha-bgC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MnF-5n-uzl" id="5Vf-Sx-eDP"/>
+                            <outlet property="delegate" destination="MnF-5n-uzl" id="2To-Eh-g5H"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="znk-Kk-WYw">
+                        <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="RxF-Ld-IPw"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ONv-l6-Kvn">
+                            <rect key="frame" x="146.5" y="7" width="82" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                            <state key="normal" title="Сброс"/>
+                            <connections>
+                                <action selector="buttonTapped:" destination="MnF-5n-uzl" eventType="touchUpInside" id="xmu-7p-Toa"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="Ранжировать" id="QVz-pm-o57">
+                            <connections>
+                                <action selector="rankButtonTapped:" destination="MnF-5n-uzl" id="5tA-e5-ro3"/>
+                                <segue destination="t4x-1C-C6q" kind="show" identifier="rankingSegue" id="g8Y-1X-79L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VaS-lA-RDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="134"/>
+        </scene>
+        <!--Bear Detail View Controller-->
+        <scene sceneID="PDh-Pa-chb">
+            <objects>
+                <viewController id="1b1-EV-sNb" customClass="BearDetailViewController" customModule="BearsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rtU-rT-196">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9mn-gj-8tv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="epi-sf-ZGL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="YFI-da-pwz" customClass="BearDetailTableViewCell" customModule="BearsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YFI-da-pwz" id="QuJ-rA-pfp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9mn-gj-8tv" firstAttribute="top" secondItem="2aR-rT-D4L" secondAttribute="top" id="0pb-d3-4va"/>
+                            <constraint firstItem="9mn-gj-8tv" firstAttribute="bottom" secondItem="2aR-rT-D4L" secondAttribute="bottom" id="Eju-Nd-LM3"/>
+                            <constraint firstItem="9mn-gj-8tv" firstAttribute="trailing" secondItem="2aR-rT-D4L" secondAttribute="trailing" id="S5C-tX-f6j"/>
+                            <constraint firstItem="9mn-gj-8tv" firstAttribute="leading" secondItem="2aR-rT-D4L" secondAttribute="leading" id="hUY-tR-YRx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2aR-rT-D4L"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="epi-sf-ZGL" id="JfK-Ez-bos"/>
+                        <outlet property="tableView" destination="9mn-gj-8tv" id="Oh8-cd-San"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wHX-Cm-8Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2766" y="567"/>
+        </scene>
+        <!--Ranking Table View Controller-->
+        <scene sceneID="qiq-FI-9oI">
+            <objects>
+                <tableViewController id="t4x-1C-C6q" customClass="RankingTableViewController" customModule="BearsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FJS-zl-heg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="xfc-JF-Qvb" customClass="RankingTableViewCell" customModule="BearsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xfc-JF-Qvb" id="1aq-9K-19P">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.96620899439999997" green="0.87889715010000002" blue="0.6191993402" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="t4x-1C-C6q" id="p2V-mI-g4U"/>
+                            <outlet property="delegate" destination="t4x-1C-C6q" id="vsX-gd-Zwn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Y2s-WI-jrI">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена " id="wmg-8N-rMv">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="t4x-1C-C6q" id="dZm-Z2-F5x"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Готово" style="done" id="rmO-V9-dJu">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="t4x-1C-C6q" id="7bJ-mg-xjP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7d-wh-vtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2767" y="-322"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ejW-qT-JnJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C6v-TD-2a1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dg4-w0-pKG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2ft-M5-EpC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c9f-rg-rty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
